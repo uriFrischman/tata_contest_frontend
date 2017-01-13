@@ -60,3 +60,27 @@
     margin-top: 25px;
     text-align: center;
 }
+
+#wikipedia-results {
+    background-color: red;
+}
+
+#google-results {
+    background-color: green;
+}
+
+#youtube-results {
+    background-color: yellow;
+}
+
+#nyt_results {
+    background-color: aqua;
+}
+
+#summary-results {
+    background-color: purple;
+}
+
+#reference-results {
+    background-color: pink;
+}

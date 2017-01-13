@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tataSite">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="tataCtrl">
+
+
+<h1 ng-show="loading">Lodaing {{site}}</h1>
+
+    <div class="title">Search For Anything</div>
+    <div class="search-bar-container">
+        <input class="search-bar" type="text" ng-model="searchQuery">
+    </div>
+
+<div style="text-align: center">
+
+    <span class="search-option"><input  type="checkbox" ng-model="searchOption.wikipedia">Wikipedia</span>
+    <span class="search-option"><input  type="checkbox" ng-model="searchOption.google">Google</span>
+    <span class="search-option"><input  type="checkbox" ng-model="searchOption.youtube">Youtube</span>
+    <span class="search-option"><input  type="checkbox" ng-model="searchOption.new_york_times">New York Times</span>
+    <span class="search-option"><input  type="checkbox" ng-model="searchOption.summary">Summary</span>
+    <span class="search-option"><input  type="checkbox" ng-model="searchOption.reference">Reference.com</span>
+
+</div>
+
+
+
+    <div class="search-button-container">
+        <button ng-click="search()">Search</button>
+    </div>
+
+    <div class="results-container">
+
+        <div class="result-box">
+            Wikiedia
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="jqueryScripts.js"></script>
+<script src="app.js"></script>
+</html>

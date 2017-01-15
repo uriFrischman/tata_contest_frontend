@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tataSite">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-controller="tataCtrl">
+
+
+<div class="results-container">
+
+    <div class="result-box" id="wikipedia-results">
+        Wikiedia
+        <span ng-show="searchOption.wikipedia">{{links.wikipedia}}</span>
+    </div>
+
+    <div class="result-box" id="google-results">
+        Google
+        <span ng-show="searchOption.youtube">{{links.google}}</span>
+    </div>
+
+    <div class="result-box" id="youtube-results">
+        Youtube
+        <span ng-show="searchOption.youtube">{{links.youtube}}</span>
+    </div>
+
+    <div class="result-box" id="nyt_results">
+        New York Times
+        <span ng-show="searchOption.new_york_times">{{links.new_york_times}}</span>
+    </div>
+    <div class="result-box" id="summary-results">
+        Summary
+        <span ng-show="searchOption.summary">{{links.summary}}</span>
+    </div>
+    <div class="result-box" id="reference-results">
+        Reference.com
+        <span ng-show="searchOption.reference">{{links.reference}}</span>
+    </div>
+    <div class="result-box" id="patents-results">
+        Patents
+        <span ng-show="searchOption.patents">{{links.patents}}</span>
+    </div>
+
+    <div class="result-box" id="cases-results" >
+        Cases
+        <span ng-show="searchOption.cases">{{links.cases}}</span>
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>

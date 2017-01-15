@@ -24,6 +24,10 @@
     <span class="search-option"><input  type="checkbox" ng-model="searchOption.new_york_times">New York Times</span>
     <span class="search-option"><input  type="checkbox" ng-model="searchOption.summary">Summary</span>
     <span class="search-option"><input  type="checkbox" ng-model="searchOption.reference">Reference.com</span>
+    <span class="search-option"><input type="checkbox" ng-model="searchOption.patents">Patents</span>
+
+
+    <span class="search-option"><input type="checkbox" ng-model="searchOption.selectAll" ng-change="selectAll()">Select All</span>
 
 </div>
 
@@ -61,6 +65,10 @@
         <div class="result-box" id="reference-results">
             Reference.com
             {{links.reference}}
+        </div>
+        <div class="result-box" id="patents-results">
+            Patents
+            {{links.patents}}
         </div>
 
 

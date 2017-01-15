@@ -21,7 +21,15 @@
 var app = angular.module('tataSite', []);
 
 app.controller('tataCtrl', function ($scope, $http) {
-    $scope.searchOption = {};
+    $scope.searchOption = {
+        'wikipedia': null,
+        'google': null,
+        'youtube': null,
+        'new_york_times': null,
+        'summary': null,
+        'reference': null,
+        'patents': null
+    };
     $scope.loading = false;
     $scope.links = {};
     $scope.search = function () {
@@ -42,7 +50,23 @@ app.controller('tataCtrl', function ($scope, $http) {
         $scope.loading = false;
         $scope.searchOption = {};
 
+    };
+
+    $scope.selectAll = function () {
+        console.log($scope.searchOption.selectAll)
+
+        if ($scope.searchOption.selectAll) {
+            angular.forEach(Object.keys($scope.searchOption), function (site) {
+                $scope.searchOption[site] = true;
+            } )
+        }
+        else {
+            angular.forEach(Object.keys($scope.searchOption), function (site) {
+                $scope.searchOption[site] = false;
+            } )
+        }
     }
+
 
 
 

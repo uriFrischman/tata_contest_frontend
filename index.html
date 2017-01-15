@@ -25,6 +25,7 @@
     <span class="search-option"><input  type="checkbox" ng-model="searchOption.summary">Summary</span>
     <span class="search-option"><input  type="checkbox" ng-model="searchOption.reference">Reference.com</span>
     <span class="search-option"><input type="checkbox" ng-model="searchOption.patents">Patents</span>
+    <span class="search-option"><input type="checkbox" ng-model="searchOption.cases">Cases</span>
 
 
     <span class="search-option"><input type="checkbox" ng-model="searchOption.selectAll" ng-change="selectAll()">Select All</span>
@@ -41,36 +42,40 @@
 
         <div class="result-box" id="wikipedia-results">
             Wikiedia
-            {{links.wikipedia}}
+            <span ng-show="searchOption.wikipedia">{{links.wikipedia}}</span>
         </div>
 
         <div class="result-box" id="google-results">
             Google
-            {{links.google}}
+            <span ng-show="searchOption.youtube">{{links.google}}</span>
         </div>
 
         <div class="result-box" id="youtube-results">
             Youtube
-            {{links.youtube}}
+            <span ng-show="searchOption.youtube">{{links.youtube}}</span>
         </div>
 
         <div class="result-box" id="nyt_results">
              New York Times
-            {{links.new_york_times}}
+            <span ng-show="searchOption.new_york_times">{{links.new_york_times}}</span>
         </div>
         <div class="result-box" id="summary-results">
             Summary
-            {{links.summary}}
+            <span ng-show="searchOption.summary">{{links.summary}}</span>
         </div>
         <div class="result-box" id="reference-results">
             Reference.com
-            {{links.reference}}
+            <span ng-show="searchOption.reference">{{links.reference}}</span>
         </div>
         <div class="result-box" id="patents-results">
             Patents
-            {{links.patents}}
+            <span ng-show="searchOption.patents">{{links.patents}}</span>
         </div>
 
+        <div class="result-box" id="cases-results" >
+            Cases
+           <span ng-show="searchOption.cases">{{links.cases}}</span>
+        </div>
 
 
     </div>

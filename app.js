@@ -28,12 +28,11 @@ app.controller('tataCtrl', function ($scope, $http) {
         'new_york_times': null,
         'summary': null,
         'reference': null,
-        'patents': null
+        'patents': null,
+        'cases': null
     };
-    $scope.loading = false;
     $scope.links = {};
     $scope.search = function () {
-        $scope.loading = true;
         var sitesToSearch = Object.keys($scope.searchOption);
         $scope.results = [];
         angular.forEach(sitesToSearch, function (site) {
@@ -44,17 +43,9 @@ app.controller('tataCtrl', function ($scope, $http) {
                 $scope.links[site] = data.data[site];
             })
         });
-        console.log($scope.results);
-
-        console.log(Object.keys($scope.searchOption));
-        $scope.loading = false;
-        $scope.searchOption = {};
-
     };
 
     $scope.selectAll = function () {
-        console.log($scope.searchOption.selectAll)
-
         if ($scope.searchOption.selectAll) {
             angular.forEach(Object.keys($scope.searchOption), function (site) {
                 $scope.searchOption[site] = true;

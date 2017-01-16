@@ -2,9 +2,10 @@
 <html lang="en" ng-app="tataSite">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Search For Anything!</title>
 
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono" rel="stylesheet">
 </head>
 <body ng-controller="tataCtrl">
 
@@ -12,7 +13,7 @@
 
 
     <div class="search-bar-container">
-        <div class="title">Search For Anything</div>
+        <div class="title">Search For Anything!</div>
         <input class="search-bar" type="text" ng-model="searchQuery">
         <div class="search-button-container">
             <button class="search-button" ng-click="search()">Search</button>
@@ -31,7 +32,7 @@
     <span class="search-option"><input type="checkbox" ng-model="searchOption.cases">Court Cases</span>
 
 
-    <span class="search-option"><input type="checkbox" ng-model="searchOption.selectAll" ng-change="selectAll()">Select All</span>
+
 
 </div>
 
@@ -42,26 +43,26 @@
     <div class="results-container">
 
         <div class="row">
-            <div class="summary-result">
+            <div class="summary-result" ng-show="links.summary">
                 <div class="result-logo-container">
                     <img src="http://www.fescity.com/wp-content/uploads/2015/04/wikipedia_logo_d.png" style="height: 50px;" alt="">
                 </div>
                <div class="summary-header">Here is a summary of {{searchQuery}} (from Wikipedia):</div> <br>
                 <div class="summary-text">{{links.summary}}</div>
             </div>
-            <div class="wikipedia-result">
+            <div ng-show="links.wikipedia" class="wikipedia-result">
                 <div class="result-logo-container">
                     <img src="http://www.fescity.com/wp-content/uploads/2015/04/wikipedia_logo_d.png" style="height: 50px;" alt="">
                 </div>
-                <div style="text-align: center">
+                <div style="text-align: center;">
                     <span class="wikipedia-header">The full Wikipedia page is found here</span> <br>
-                    <a target="_blank" href={{links.wikipedia}}>Wikipedia Link</a>
+                    <a ng-show="links.wikipedia" target="_blank" href={{links.wikipedia}}>Wikipedia Link</a>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="google-result">
+            <div class="google-result" ng-show="links.google">
                 <div class="result-logo-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png" style="height: 50px;" alt="">
                 </div>
@@ -73,7 +74,7 @@
                 </div>
             </div>
 
-            <div class="reference-result">
+            <div class="reference-result" ng-show="links.reference">
                 <div class="result-logo-container">
                     <img src="https://upload.wikimedia.org/wikipedia/en/9/90/Reference-com_Logo_2016.png" style="height: 50px;" alt="">
                 </div>
@@ -81,7 +82,7 @@
                 <div style="text-align: center">
                     <div class="reference-header">Look {{searchQuery}} on Reference.com!</div>
                     <div ng-repeat="link in links.reference track by $index |limitTo: 20">
-                        <div class="reference-text"><a target="_blank" href="{{link}}">{{link}}</a></div>
+                        <div class="reference-text"><a target="_blank" href="{{link}}">{{link }}</a></div>
                     </div>
                 </div>
 
@@ -89,7 +90,7 @@
             </div>
 
 
-            <div class="youtube-result">
+            <div class="youtube-result" ng-show="links.youtube">
                 <div class="result-logo-container">
                     <img src="https://www.youtube.com/yt/brand/media/image/YouTube-logo-full_color.png" style="height: 50px;" alt="">
                 </div>
@@ -97,7 +98,7 @@
                 <div style="text-align: center">
                     <div class="youtube-header">Check {{searchQuery}} out on YouTube!</div>
                     <div style="text-align: left"  ng-repeat="link in links.youtube track by $index |limitTo: 20">
-                        <div class="youtube-text"><a target="_blank" href="{{link}}">{{link}}</a></div>
+                        <div class="youtube-text"><a target="_blank" href="{{link}}">{{link | limitTo:75}}</a></div>
                     </div>
                 </div>
 
@@ -106,7 +107,7 @@
         </div>
 
         <div class="row">
-            <div class="nyt-result">
+            <div class="nyt-result" ng-show="links.new_york_times">
                 <div class="result-logo-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/The_New_York_Times_logo.png" style="height: 50px;" alt="">
                 </div>
@@ -117,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class="patents-result">
+            <div class="patents-result" ng-show="links.patents">
                 <div class="result-logo-container">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/US-PatentTrademarkOffice-Seal.svg/1024px-US-PatentTrademarkOffice-Seal.svg.png" style="height: 100px;" alt="">
                 </div>
@@ -132,7 +133,7 @@
 
 
         <div class="row">
-            <div class="cases-result">
+            <div class="cases-result" ng-show="links.cases">
                 <div class="result-logo-container">
                     <img src="http://www.capitolmarkets.com/wp-content/uploads/2012/10/US-Courts.png" style="height: 50px;" alt="">
                 </div>
@@ -144,47 +145,6 @@
                 </div>
             </div>
         </div>
-
-
-
-        <!--<div class="result-box" id="wikipedia-results">-->
-            <!--Wikiedia-->
-            <!--<span ng-show="searchOption.wikipedia">{{links.wikipedia}}</span>-->
-        <!--</div>-->
-
-        <!--<div class="result-box" id="google-results">-->
-            <!--Google-->
-            <!--<span ng-show="searchOption.youtube">{{links.google}}</span>-->
-        <!--</div>-->
-
-        <!--<div class="result-box" id="youtube-results">-->
-            <!--Youtube-->
-            <!--<span ng-show="searchOption.youtube">{{links.youtube}}</span>-->
-        <!--</div>-->
-
-        <!--<div class="result-box" id="nyt_results">-->
-             <!--New York Times-->
-            <!--<span ng-show="searchOption.new_york_times">{{links.new_york_times}}</span>-->
-        <!--</div>-->
-        <!--<div class="result-box" id="summary-results">-->
-            <!--Summary-->
-            <!--<span ng-show="searchOption.summary">{{links.summary}}</span>-->
-        <!--</div>-->
-        <!--<div class="result-box" id="reference-results">-->
-            <!--Reference.com-->
-            <!--<span ng-show="searchOption.reference">{{links.reference}}</span>-->
-        <!--</div>-->
-        <!--<div class="result-box" id="patents-results">-->
-            <!--Patents-->
-            <!--<span ng-show="searchOption.patents">{{links.patents}}</span>-->
-        <!--</div>-->
-
-        <!--<div class="result-box" id="cases-results" >-->
-            <!--Cases-->
-           <!--<span ng-show="searchOption.cases">{{links.cases}}</span>-->
-        <!--</div>-->
-
-
     </div>
 
 

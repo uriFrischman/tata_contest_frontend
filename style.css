@@ -1,16 +1,15 @@
-/*html {*/
-    /*background-color: white;*/
-    /*color: black;*/
-/*}*/
-
-
-
 body {
     background-color: #444444;
+    font-family: 'Overpass Mono', monospace;
+    /*overflow: hidden;*/
+    padding-bottom: 30px;
 }
 
 
-
+a {
+    text-decoration: none;
+    color: #444444;
+}
 
 
 
@@ -36,10 +35,11 @@ body {
     height: 32px;
     width: 70%;
     border: 0;
-    background-color: #777777;
+    background-color: #5d5d5d;
     font-size: 30px;
-    color: aqua;
+    color: cornflowerblue;
     border-radius: 5px;
+    font-family: 'Overpass Mono', monospace;
 }
 
 .search-bar:focus {
@@ -52,6 +52,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+
 }
 
 .search-button {
@@ -62,6 +63,7 @@ body {
     background-color: transparent;
     font-size: 25px;
     border-radius: 3px;
+    font-family: 'Overpass Mono', monospace;
 }
 
 .search-button:hover {
@@ -101,7 +103,7 @@ body {
 
 .summary-header {
     font-size: 40px;
-    color: whitesmoke;
+    color: black;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -112,41 +114,50 @@ body {
 
 .wikipedia-header {
     font-size: 40px;
-    color: whitesmoke;
+    color: black;
     display: block;
 }
 
 .summary-result {
     width: 65%;
-    background-color: orange;
+    background-color:cornflowerblue;
     border-radius: 3px;
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
+    -webkit-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    -moz-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
 }
 
 .wikipedia-result {
     width: 65%;
     margin-left: 2.5%;
-    background-color: pink;
+    background-color: #fff137;
     border-radius: 3px;
+    -webkit-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    -moz-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
 }
 
 .google-header {
     font-size: 40px;
-    color: whitesmoke;
+    color: black;
     display: block;
 }
 
 .google-result {
     width: 40%;
-    background-color: purple;
+    background-color: #adadab;
     /*text-align: center;*/
     border-radius: 3px;
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
     margin-right: 2.5%;
+    -webkit-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    -moz-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
 }
 
 .google-text {
@@ -158,13 +169,16 @@ body {
 
 .reference-result {
     width: 30%;
-    background-color: green;
+    background-color: #62b120;
+    -webkit-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    -moz-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
 }
 
 
 .reference-header {
     font-size: 40px;
-    color: whitesmoke;
+    color: black;
     display: block;
 }
 
@@ -176,13 +190,13 @@ body {
 .youtube-result {
     margin-left:2.5%;
     width: 25%;
-    background-color: gold;
+    background-color: #fdf8ff;
     border-radius: 3px;
 }
 
 .youtube-header {
     font-size: 40px;
-    color: whitesmoke;
+    color: black;
     display: block;
 }
 
@@ -195,13 +209,16 @@ body {
 .nyt-result {
     width: 60%;
     margin-left: 5%;
-    background-color: turquoise;
+    background-color: #36cde0;
     border-radius: 3px;
+    -webkit-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    -moz-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
 }
 
 .nyt-header {
     font-size: 40px;
-    color: whitesmoke;
+    color: black;
     display: block;
 }
 
@@ -213,13 +230,16 @@ body {
 .patents-result {
     margin-left: 5%;
     width: 25%;
-    background-color: teal;
+    background-color: #bf7522;
     border-radius: 3px;
+    -webkit-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    -moz-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
 }
 
 .patents-header {
     font-size: 40px;
-    color: whitesmoke;
+    color: black;
     display: block;
 }
 
@@ -230,13 +250,16 @@ body {
 
 .cases-result {
     width: 100%;
-    background-color: gold;
+    background-color: #ff6d4c;
     border-radius: 3px;
+    -webkit-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    -moz-box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
+    box-shadow: 10px 10px 170px 19px rgba(0,0,0,0.79);
 }
 
 .cases-header {
     font-size: 40px;
-    color: whitesmoke;
+    color: black;
     display: block;
 }
 
@@ -248,44 +271,54 @@ body {
 
 
 
-.result-box {
-    width: 50%;
-    margin-left: 25%;
-    background-color: green;
-    margin-top: 100px;
-    text-align: center;
-    margin-bottom: 30px;
-}
+@media screen and (max-width: 1500px) {
 
 
-#wikipedia-results {
-    background-color: red;
-}
+    .row {
+        display: block;
+    }
 
-#google-results {
-    background-color: green;
-}
+    .summary-result {
+        width: 100%;
+        margin: 0;
+    }
 
-#youtube-results {
-    background-color: yellow;
-}
+    .wikipedia-result {
+        width: 100%;
+        margin: 0;
+    }
 
-#nyt_results {
-    background-color: aqua;
-}
+    .google-result {
+        width: 100%;
+        margin: 0;
+    }
 
-#summary-results {
-    background-color: purple;
-}
+    .reference-result {
+        width: 100%;
+        margin: 0;
+    }
 
-#reference-results {
-    background-color: pink;
-}
+    .youtube-result {
+        width: 100%;
+        margin: 0;
+    }
 
-#patents-results {
-    background-color: gold;
-}
+    .nyt-result {
+        width: 100%;
+        margin: 0;
+    }
 
-#cases-results {
-    background-color: beige;
+    .patents-result {
+        width: 100%;
+        margin: 0;
+    }
+
+    .cases-result {
+        width: 100%;
+        margin: 0;
+    }
+
+    .search-option {
+        display: block;
+    }
 }
